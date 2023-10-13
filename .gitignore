@@ -1,0 +1,7 @@
+.*
+Debug/
+finaly_freertos Debug.cfg
+finaly_freertos Debug.launch
+finaly_freertos.ioc
+STM32F103RBTX_FLASH.ld
+*global.h
