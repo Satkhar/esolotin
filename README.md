@@ -1,5 +1,6 @@
 # esolotin
 Hello there!
+My name is Evgeny Solotin.
 
 Little bit aboult this repo.
 Repository create as an extension to my resume (CV).
@@ -23,12 +24,12 @@ Some projects have only text file with description.
 
 ---
 
-More detailed description:
+> More detailed description:
 
 <details>
 <summary>Analys temp from *.csv file</summary>
 
-folder: /analys_temp  
+folder: /1.analys_temp  
 first full C project on Github.   
 include source files + makefile.  
 programm can do base analityc for temperature array. value takes from *.csv file.
@@ -48,7 +49,7 @@ max temperature.
 <details>
 <summary>Calculate area with E pricision</summary>
   
-folder: /calculate_area  
+folder: /2.calculate_area  
 second full C project on Github.  
 include source files + makefile.  
 programm calculates area figure forming by three curves with E pricision.
@@ -67,7 +68,7 @@ calculated area.
 <details>
 <summary>STM32 FreeRTOS + ESP32</summary>
     
-folder: /stm_freertos_esp
+folder: /3.stm_freertos_esp
 project with two chapters.  
 finaly_baz_el - project on ESP32.  
 finaly_freertos - project on STM32.  
@@ -88,7 +89,7 @@ on the stm (nucleo f103rb board), the mask is read by uart, the illumination val
   </summary>
 
   
-folder: /lcd_gyro_ino  
+folder: /4.lcd_gyro_ino  
 project designed in adruinoIDE for introduction with IDE and ino platform.  
 include source file + readme.  
 functions:  
@@ -101,4 +102,57 @@ switching low power mode by press button.
 
 ---
 
+<details>
+  <summary>
+    Сircuit-based rand generator
+  </summary>
 
+  
+folder: /5.rand_generator  
+project designed in adruinoIDE for introduction with IDE and ino platform.  
+include source file + readme.  
+Random number generator on seven-segment indicators.  
+
+the task of the project is to get the skill of designing electronic circuits with free CAD systems, such as EasyEDA, and to practice of mounting and debugging the designed device.  
+technical specification, calculation schematic and the result electronic scheme in the "generator_rand" file.  
+
+</details>
+
+---
+
+<details>
+  <summary>
+    ESP32 + Gyro + TinyML
+  </summary>
+
+  
+folder: /6.tinyML_esp32 
+Motion interpreter.   
+include readme with description and link on public project edgeImpulse.  
+
+
+the project was implemented using the online platform edgeimpulse.  
+The task of the project is to introduce and implement TinyML, a tiny machine learning.  
+
+</details>
+
+---
+
+<details>
+  <summary>
+    Home environment project
+  </summary>
+
+  
+folder: /8.environment_project 
+Project with few parts.
+
+include:  
+High Level Design (HLD) for project;  
+project for esp32 with sensors;  
+project for esp32 with LCD and control panel.
+
+>coming soon
+</details>
+
+---
