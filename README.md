@@ -3,7 +3,7 @@ Hello there!
 My name is Evgeny Solotin.
 
 Little bit aboult this repo.
-Repository create as an extension to my resume (CV) - esolotin_CV.docx.
+Repository create as an extension to my resume (CV) - esolotin_CV.docx.  
 The purpose of these projects is to show mastery of skills and technologies.
 Some projects have only text file with description.
 
