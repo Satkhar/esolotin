@@ -23,7 +23,7 @@ Some projects have only text file with description.
 
 ---
 
-More detalied description:
+More detailed description:
 
 <details>
 <summary>Analys temp from *.csv file</summary>
@@ -49,7 +49,7 @@ max temperature.
 <summary>Calculate area with E pricision</summary>
   
 folder: /calculate_area  
-second full project on Github.  
+second full C project on Github.  
 include source files + makefile.  
 programm calculates area figure forming by three curves with E pricision.
 input keys:  
@@ -78,3 +78,27 @@ on the stm (nucleo f103rb board), the mask is read by uart, the illumination val
 2 task - uart, where the received buffer is read and the mask is updated. and the dma is started to receive/send values.  
 3 task - reading the status of the buttons and changing according to the eventGroup.  
 4 task - event status query and LED control.  
+</details>
+
+---
+
+<details>
+  <summary>
+    LCD_gyro_ino
+  </summary>
+
+  
+folder: /lcd_gyro_ino  
+project designed in adruinoIDE for introduction with IDE and ino platform.  
+include source file + readme.  
+functions:  
+resistance measurement by the included ADC;  
+recieve data from gyro adxl345 by I2C;  
+display readed values on LCD ST7735S by SPI;  
+switching low power mode by press button.  
+
+</details>
+
+---
+
+
