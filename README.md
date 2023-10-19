@@ -126,7 +126,7 @@ technical specification, calculation schematic and the result electronic scheme 
   </summary>
 
   
-folder: /6.tinyML_esp32 
+folder: /6.tinyML_esp32  
 Motion interpreter.   
 include readme with description and link on public project edgeImpulse.  
 
