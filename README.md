@@ -68,7 +68,7 @@ calculated area.
 <details>
 <summary>STM32 FreeRTOS + ESP32</summary>
     
-folder: /3.stm_freertos_esp
+folder: /3.stm_freertos_esp  
 project with two chapters.  
 finaly_baz_el - project on ESP32.  
 finaly_freertos - project on STM32.  
