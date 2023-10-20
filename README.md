@@ -19,6 +19,7 @@ Some projects have only text file with description.
 |     5| Сircuit-based rand generator  |
 |     6| ESP32 + Gyro + TinyML  |
 |     7| Home environment project  |
+|     8| Bootloader stm32f1xx  |
 
 </details>
 
@@ -152,7 +153,26 @@ High Level Design (HLD) for project;
 project for esp32 with sensors;  
 project for esp32 with LCD and control panel.
 
->coming soon
+project have two part.  
+first board esp32 take data from sensors (DHT11 and photoresistor) and send these to mqtt-server.  
+connect to mqtt by certificate.
+second bord esp32 
+</details>
+
+---
+
+<details>
+  <summary>
+    Bootloader stm32f1xx
+  </summary>
+
+  
+folder: /8.boot_loader  
+Bootloader.  
+
+include project for stmIDE.  
+
+Realizy my bootload in stm32 in training mode.  
 </details>
 
 ---
