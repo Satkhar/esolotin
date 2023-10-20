@@ -144,8 +144,8 @@ The task of the project is to introduce and implement TinyML, a tiny machine lea
   </summary>
 
   
-folder: /8.environment_project 
-Project with few parts.
+folder: /7.environment_project  
+Project with few parts.  
 
 include:  
 High Level Design (HLD) for project;  
