@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "../../ino/lcd"
+		},
+		{
+			"name": "lcd_platformio",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"ssd1306_interface.h": "c",
+			"ssd1306_spi.h": "c",
+			"optional": "cpp",
+			"istream": "cpp",
+			"ostream": "cpp",
+			"ratio": "cpp",
+			"system_error": "cpp",
+			"array": "cpp",
+			"functional": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"utility": "cpp"
+		}
+	}
+}
