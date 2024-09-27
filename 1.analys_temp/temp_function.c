@@ -1,6 +1,22 @@
-#include <stdio.h>
-#include "temp_functions.h"
 
+//-------------------------------------------------------------------------------------------------
+/// @file temp_function.c
+/// @author Евгений Солотин
+/// @brief Файл с используемыми функциями.
+/// @copyright Copyright (c) 2024
+//-------------------------------------------------------------------------------------------------
+
+#include <stdio.h>
+#include "temp_function.h"
+#include <stdlib.h>
+#include <string.h>
+
+//-------------------------------------------------------------------------------------------------
+
+/// @brief функция чтения csv файла.
+/// @param filename - указатель на файл
+/// @param my_stat - структура, что заполняется из считываемого файла
+/// @return возвращает 0 если нет ошибок
 int read_from_csv_file(char *filename, struct data *my_stat)
 {
     FILE *temp_file;
@@ -8,17 +24,20 @@ int read_from_csv_file(char *filename, struct data *my_stat)
     char ch='.';
     char my_buff[23] = {0};
 
-    temp_file = fopen(filename, "r");      //возвращает 0. не видит файл?
+    if(filename == NULL)
+        return 1;
 
-//    printf("\n");
+    temp_file = fopen(filename, "r");      // если возвращает 0 не видит файл
+
+    // читаем максимум 21 символ до символа новой строки. s - ожидаем пробел/табуляцию после считывания строки
     for(int k = 1; -1 != fscanf(temp_file, "%21[^\n]s", my_buff); k++)
     {
         do
         {
-            ch=fgetc(temp_file);
+            ch = fgetc(temp_file);
  //           printf("%d ch is - %c", k, ch);
         }
-        while(EOF != ch && '\n' != ch);     // ?! как это работает ?!
+        while((EOF != ch) && ('\n' != ch));     // возвращает char, сравнивает с EOF или с новой строкой
 
         if(my_buff[0] < '0' || my_buff[0] > '9')
         {
@@ -26,9 +45,9 @@ int read_from_csv_file(char *filename, struct data *my_stat)
             return 1;
         }
 
+        //  смотрим, что считалось нужное количество параметров иначе выводим предупреждение
         if(sscanf(my_buff, "%d;%d;%d;%d;%d;%d", &year, &month, &day, &hour, &minute, &temp) == 6)
         {
- //           printf("year %d month %d day %d hour %d minute %d temp %d\n", year, month, day, hour, minute, temp );
             add_statistics(my_stat, year, month, day, temp);
         }
         else
@@ -42,14 +61,19 @@ int read_from_csv_file(char *filename, struct data *my_stat)
     return 0;
 }
 
+//-------------------------------------------------------------------------------------------------
+
+/// @brief функция добавления считанного значения в целевую структуру
+/// @param my_stat - указатель на целевую структуру
+/// @param year - записываемый параметр "год"
+/// @param month - записываемый параметр "месяц"
+/// @param day - записываемый параметр "день"
+/// @param temp  - записываемый параметр "температура"
 void add_statistics(struct data *my_stat, int year, int month, int day, int temp)
 {
-    double temp_for_mean = 0;
+    double temp_for_mean = 0.0;
     month = month - 1;  //для правильной записи
     day = day - 1;
-
-    //debug
-
 
     //если данные этого месяца пустые - вписываем год и начальные значения температуры
     //нужно, чтобы не было косяков, если год не янв-янв
@@ -76,17 +100,20 @@ void add_statistics(struct data *my_stat, int year, int month, int day, int temp
         my_stat[month].temp_min = temp;
     }
 
-    my_stat[month].cnt ++;
+    my_stat[month].cnt++;
 
     for(int i = 0; i <= day; i++)
     {
         temp_for_mean += my_stat[month].day[i]*1.0; //сумма температуры за месяц
     }
 
-    my_stat[month].temp_mean = temp_for_mean/my_stat[month].cnt;    //средняя температура за месяц. пересчитываем с каждым новым значением
-
+    my_stat[month].temp_mean = (double)(temp_for_mean/my_stat[month].cnt);    //средняя температура за месяц. пересчитываем с каждым новым значением
 }
 
+//-------------------------------------------------------------------------------------------------
+
+/// @brief старый код по очистке структуры. оставлю как память.
+/// @param target 
 void clear_stats(struct data *target)
 {
     for(int i = 0; i < 12; i++)
@@ -104,12 +131,21 @@ void clear_stats(struct data *target)
     return;
 }
 
+//-------------------------------------------------------------------------------------------------
+
+/// @brief функция вывода статистики, считанной из структуры
+/// @param target_month - значение интересующего месяца. при -1 водится статистика за 12 месяцев
+/// @param my_stat - указатель на структуру с данными
 void temp_year(int target_month, struct data *my_stat)
 {
     double temp_mean;
     int min_year = 0;
     int max_year = 0;
     int cnt = 0;
+    
+    (void)min_year;
+    (void)max_year;
+    (void)cnt;
 
     if(target_month == -1)
     {
@@ -155,7 +191,7 @@ void temp_year(int target_month, struct data *my_stat)
                    target_month+1, my_stat[target_month].year, my_stat[target_month].temp_mean, my_stat[target_month].temp_min, my_stat[target_month].temp_max);
 
         }
-        temp_mean = my_stat[target_month].temp_mean;
+        // temp_mean = my_stat[target_month].temp_mean; 
     }
 }
 
