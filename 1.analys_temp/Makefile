@@ -7,6 +7,8 @@ SRC = main.c temp_function.c
 
 OBJ = $(SRC:.c=.o)		# делаем .о из .с
 
+#TEMP_PATH = ./build
+
 all: temp
 
 #-----------------------------
@@ -33,5 +35,5 @@ temp: $(OBJ)
 .PHONY: all temp clean
 
 clean:
-	rm -f $(OBJ) temp
+	 del -fr $(OBJ) temp
 #	rm -fr *.o temp
