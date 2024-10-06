@@ -7,3 +7,6 @@ Debug/
 *global.h
 *my_mqtt.h
 lcd_platformio/include/cert/
+temp
+*.o
+*.exe 
